@@ -14,7 +14,7 @@ function App() {
         {colors.map((color, index) => (
           <div
             key={index}
-            className="color-box"
+            className={`color-box ${selectedColor === color ? "active" : ""}`}
             style={{ backgroundColor: color }}
             onClick={() => setSelectedColor(color)}
           ></div>
