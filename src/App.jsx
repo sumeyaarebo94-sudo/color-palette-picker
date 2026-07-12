@@ -22,6 +22,9 @@ function App() {
       </div>
 
       <h2>Selected Color: {selectedColor || "None"}</h2>
+      <button onClick={() => setSelectedColor("")}>
+       Reset
+      </button>
     </div>
   );
 }
