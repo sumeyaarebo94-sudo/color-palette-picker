@@ -9,7 +9,11 @@ function App() {
 
   return (
     <div className="app">
-      <h1>🎨 Color Palette Picker</h1>
+      <h1>🎨 My Color Palette Picker</h1>
+
+      <p>Pick a color to preview it below.</p>
+
+      <h3>Choose a color:</h3>
 
       <div className="palette">
         {colors.map((color, index) => (
@@ -26,6 +30,10 @@ function App() {
         selectedColor={selectedColor}
         setSelectedColor={setSelectedColor}
       />
+
+      <footer>
+        <p>Made by Sumeya ❤️ using React</p>
+      </footer>
     </div>
   );
 }
