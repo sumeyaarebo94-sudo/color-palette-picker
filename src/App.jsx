@@ -1,16 +1,20 @@
 import "./App.css";
 
 function App() {
+  const colors = ["red", "blue", "green", "yellow", "purple"];
+
   return (
     <div className="app">
       <h1>🎨 Color Palette Picker</h1>
 
       <div className="palette">
-        <div className="color-box" style={{ backgroundColor: "red" }}></div>
-        <div className="color-box" style={{ backgroundColor: "blue" }}></div>
-        <div className="color-box" style={{ backgroundColor: "green" }}></div>
-        <div className="color-box" style={{ backgroundColor: "yellow" }}></div>
-        <div className="color-box" style={{ backgroundColor: "purple" }}></div>
+        {colors.map((color, index) => (
+          <div
+            key={index}
+            className="color-box"
+            style={{ backgroundColor: color }}
+          ></div>
+        ))}
       </div>
     </div>
   );
