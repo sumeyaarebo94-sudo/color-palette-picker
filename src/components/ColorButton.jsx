@@ -1,8 +1,16 @@
-function ColorButton() {
+function ColorButton({
+  color,
+  selectedColor,
+  setSelectedColor,
+}) {
   return (
-    <button>
-      Red
-    </button>
+    <div
+      className={`color-box ${
+        selectedColor === color ? "active" : ""
+      }`}
+      style={{ backgroundColor: color }}
+      onClick={() => setSelectedColor(color)}
+    ></div>
   );
 }
 

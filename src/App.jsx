@@ -1,30 +1,31 @@
 import { useState } from "react";
 import "./App.css";
+import ColorButton from "./components/ColorButton";
+import ColorPreview from "./components/ColorPreview";
 
 function App() {
   const colors = ["red", "blue", "green", "yellow", "purple"];
-
   const [selectedColor, setSelectedColor] = useState("");
 
   return (
     <div className="app">
-     <h1>🎨 Color Palette Picker</h1>
+      <h1>🎨 Color Palette Picker</h1>
 
       <div className="palette">
         {colors.map((color, index) => (
-          <div
+          <ColorButton
             key={index}
-            className={`color-box ${selectedColor === color ? "active" : ""}`}
-            style={{ backgroundColor: color }}
-            onClick={() => setSelectedColor(color)}
-          ></div>
+            color={color}
+            selectedColor={selectedColor}
+            setSelectedColor={setSelectedColor}
+          />
         ))}
       </div>
 
-      <h2>Selected Color: {selectedColor || "None"}</h2>
-      <button onClick={() => setSelectedColor("")}>
-       Reset
-      </button>
+      <ColorPreview
+        selectedColor={selectedColor}
+        setSelectedColor={setSelectedColor}
+      />
     </div>
   );
 }
